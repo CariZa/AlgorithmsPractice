@@ -65,26 +65,27 @@ console.log('sortedRecursiveBubbleLoop sorted', sortedRecursiveBubbleLoop);
 
 
 // Copied this bubble sort from the imposter handbook 
+// Noticed they're using a mutable list rather than sticking with immutable values :/
 
-const imposterBubbleSort = (list) => {
-    const doItAgain = false;
-    const limit = list.length;
-    const defaultNextVal = Number.POSITIVE_INFINITY;
+const imposterBubbleSort = (mutable_list) => {
+    let doItAgain = false;
+    const limit = mutable_list.length;
+    const defaultNextValue = Number.POSITIVE_INFINITY;
     var i = 0;
     for (i; i < limit; i++) {
-        let thisValue = list[i];
-        let nextValue = i + 1 < limit ? list[i+1] : defaultNextValue;
+        let thisValue = mutable_list[i];
+        let nextValue = i + 1 < limit ? mutable_list[i+1] : defaultNextValue;
         if(nextValue < thisValue) {
-            list[i] = nextValue;
-            list[i + 1] = isValue;
+            mutable_list[i] = nextValue;
+            mutable_list[i + 1] = thisValue;
             doItAgain = true;
         }
     }
-    if (doItAgain) imposterBubbleSort(list);
+    if (doItAgain) imposterBubbleSort(mutable_list);
 }
 
 
-var list = [9,4,2,7,2,8,1];
-let sortedImposterBubbleSort = imposterBubbleSort(list);
-console.log('sortedImposterBubbleSort sorted', sortedImposterBubbleSort);
+var mutable_list = [9,4,2,7,2,8,1];
+imposterBubbleSort(mutable_list);
+console.log('sortedImposterBubbleSort sorted', mutable_list);
 
