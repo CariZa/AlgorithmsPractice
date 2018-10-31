@@ -66,6 +66,7 @@ console.log('sortedRecursiveBubbleLoop sorted', sortedRecursiveBubbleLoop);
 
 // Copied this bubble sort from the imposter handbook 
 // Noticed they're using a mutable list rather than sticking with immutable values :/
+// https://shop.bigmachine.io/products/the-imposters-handbook
 
 const imposterBubbleSort = (mutable_list) => {
     let doItAgain = false;
